@@ -1,0 +1,200 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+  /* Basic Colors */
+  --black: black;
+  --white: #ffffff;
+  --grey: #6a6a6a;
+  --dark-grey: #151515;
+  --light-grey: #fafafa;
+
+  /* Main Colors */
+  --primary: #a288a8;
+  --secondary: #ac5a5a;
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/AvenirLTProBlack.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/AvenirLTProLight.woff") format("woff");
+}
+
+/* Didn't use a normalize/reset approach since Bootstrap handles it out of the box */
+/* GLOBALS - ELEMENTS */
+body {
+  font-family: "Avenir Next LT Pro";
+}
+
+h2 {
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+img {
+  max-width: 100%;
+}
+
+img[width] {
+  width: auto;
+}
+
+img[width][height] {
+  height: auto;
+}
+
+/* GLOBALS - BUTTONS */
+.btn {
+  border-radius: 1px;
+  border: 2px solid;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  padding: 16px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn.btn-primary:active {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* GLOBALS - FORMS */
+
+.form-control {
+  border-radius: 0;
+  margin-bottom: 24px;
+}
+
+/* HERO */
+.hero {
+  background: url("/assets/images/hero-bg.png");
+  background-color: var(--dark-grey);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Used BEM here but unfourtunately the native nesting functionality is not available yet
+  https://www.w3.org/TR/css-nesting-1/ */
+
+.hero__logo {
+  margin-top: 12px;
+  margin-bottom: 60px;
+}
+
+.hero__left {
+  max-width: 540px;
+  margin-bottom: 90px;
+}
+
+@media (min-width: 540px) {
+  .hero__left {
+    margin-bottom: 40px;
+  }
+}
+
+.hero__title {
+  letter-spacing: 6px;
+  font-size: 42px;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 54px;
+  }
+}
+
+.form__submit {
+  width: 164px;
+}
+
+/* SECOND SECTION */
+.second-section {
+  background: url("/assets/images/second-section-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* CARD SECTION*/
+
+.cards {
+  background: url("/assets/images/pre-footer-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  position: relative;
+  padding: 50px 22px;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(110%);
+}
+
+.card:after {
+  content: "";
+  background: url("/assets/images/quote.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  top: -26px;
+  left: 42%;
+}
+
+.cards-subtitle {
+  margin: 0 auto;
+  max-width: 500px;
+  line-height: 25px;
+  color: var(--grey);
+}
+
+/* FOOTER */
+.footer-copyright {
+  margin: 0 auto;
+  max-width: 305px;
+}
+.footer-icons {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.footer-img {
+  max-width: 140px;
+  margin: 0 auto;
+}
